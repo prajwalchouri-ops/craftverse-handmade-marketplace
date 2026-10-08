@@ -97,6 +97,21 @@ footer p {
   font-size: 9px;
 }
 
+.footer-policy-link {
+  color: var(--brown);
+  font-size: 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 620px) {
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 18px 5%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

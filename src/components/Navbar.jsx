@@ -1,9 +1,23 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { useCart } from '../context/CartContext'
+import { useAuth } from '../context/AuthContext'
 import './Navbar.css'
 
 function Navbar() {
   const { itemCount } = useCart()
+  const { user, signOut } = useAuth()
+  const [authError, setAuthError] = useState('')
+  const displayName = user?.user_metadata?.name || user?.email?.split('@')[0] || 'Account'
+
+  async function handleSignOut() {
+    setAuthError('')
+    try {
+      await signOut()
+    } catch (error) {
+      setAuthError(error.message)
+    }
+  }
 
   return (
     <nav className="navbar">
@@ -20,6 +34,17 @@ function Navbar() {
           <Link to="/#about">Our Story</Link>
         </div>
 
+        <div className="navbar-account">
+          {user ? (
+            <>
+              <span className="account-name" title={user.email}>Hi, {displayName}</span>
+              <button className="account-action" type="button" onClick={handleSignOut}>Sign out</button>
+            </>
+          ) : (
+            <Link className="account-action" to="/login">Login</Link>
+          )}
+        </div>
+
         <Link to="/cart" className="cart-trigger">
           <svg viewBox="0 0 24 24">
             <path d="M5 8h14l1 12H4L5 8Z"/>
@@ -29,6 +54,7 @@ function Navbar() {
           <span className="cart-count">{itemCount}</span>
         </Link>
       </div>
+      {authError && <p className="navbar-auth-error" role="alert">{authError}</p>}
     </nav>
   )
 }

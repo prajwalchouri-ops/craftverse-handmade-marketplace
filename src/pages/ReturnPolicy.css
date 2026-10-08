@@ -1,0 +1,222 @@
+.return-policy-page {
+  min-height: 72vh;
+  padding: 62px 6%;
+  background: #f5ebdd;
+}
+
+.policy-container {
+  display: grid;
+  width: min(100%, 900px);
+  gap: 17px;
+  margin: 0 auto;
+}
+
+.policy-heading {
+  padding: 12px 0 20px;
+}
+
+.policy-heading h1 {
+  margin: 11px 0 10px;
+  color: #39271d;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 6vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.policy-heading h1 em {
+  color: #8b5e3c;
+  font-weight: 500;
+}
+
+.policy-heading > p:last-child,
+.policy-card > p,
+.policy-card li {
+  color: #806f63;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.policy-heading > p:last-child {
+  max-width: 640px;
+  margin: 0;
+}
+
+.policy-card {
+  padding: 25px 28px;
+  border: 1px solid #e6d7c6;
+  border-radius: 8px;
+  background: #fffcf7;
+  box-shadow: 0 6px 20px rgba(57, 39, 29, 0.04);
+}
+
+.policy-card h2 {
+  margin: 0 0 10px;
+  color: #39271d;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.policy-card > p {
+  margin: 0 0 8px;
+}
+
+.policy-card ul,
+.policy-card ol {
+  display: grid;
+  gap: 5px;
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+
+.policy-card li::marker {
+  color: #b98255;
+}
+
+.policy-note {
+  margin-top: 16px !important;
+  border-left: 2px solid #b98255;
+  padding-left: 12px;
+  font-size: 10px !important;
+}
+
+.refund-statuses {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 17px;
+}
+
+.refund-status {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e6d7c6;
+  border-radius: 4px;
+  padding: 8px 10px;
+  background: #fff9f0;
+  color: #5a3825;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.refund-status-number {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #efe2d1;
+  color: #8b5e3c;
+  font-size: 9px;
+}
+
+.return-request-card > p {
+  margin-bottom: 18px;
+}
+
+.return-request-form {
+  display: grid;
+  max-width: 620px;
+  gap: 15px;
+}
+
+.return-request-form > label {
+  display: grid;
+  gap: 7px;
+  color: #5a3825;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.return-request-form input:not([type="file"]),
+.return-request-form select,
+.return-request-form input[type="file"] {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid #e6d7c6;
+  border-radius: 4px;
+  padding: 9px 11px;
+  background: #fff9f0;
+  color: #2f211a;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 11px;
+}
+
+.return-request-form input:focus,
+.return-request-form select:focus {
+  outline: 2px solid rgba(185, 130, 85, 0.28);
+  border-color: #b98255;
+}
+
+.optional-label {
+  color: #806f63;
+  font-weight: 400;
+}
+
+.return-request-form .button {
+  justify-content: space-between;
+  justify-self: start;
+}
+
+.proof-name,
+.return-form-error {
+  margin: -6px 0 0;
+  color: #806f63;
+  font-size: 10px;
+}
+
+.return-form-error {
+  border-radius: 4px;
+  padding: 10px 12px;
+  background: #f8e9e4;
+  color: #8a3325;
+}
+
+.return-request-result {
+  display: grid;
+  gap: 7px;
+  margin-top: 22px;
+  border: 1px solid #d8c6ac;
+  border-radius: 6px;
+  padding: 15px;
+  background: #f5ebdd;
+  color: #5a3825;
+}
+
+.return-request-result p {
+  margin: 0;
+  font-size: 11px;
+}
+
+.return-request-result strong {
+  font-size: 12px;
+}
+
+.return-request-result small {
+  color: #806f63;
+  font-size: 10px;
+}
+
+@media (max-width: 650px) {
+  .return-policy-page {
+    padding: 38px 5%;
+  }
+
+  .policy-card {
+    padding: 20px;
+  }
+
+  .refund-statuses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 380px) {
+  .refund-statuses {
+    grid-template-columns: 1fr;
+  }
+}

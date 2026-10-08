@@ -69,6 +69,46 @@
   color: #5a3825;
 }
 
+.navbar-account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #756356;
+  font-size: 11px;
+}
+
+.account-name {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-action {
+  border: 0;
+  border-bottom: 1px solid #bda28a;
+  padding: 0 0 4px;
+  background: transparent;
+  color: #5a3825;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.navbar-auth-error {
+  position: absolute;
+  top: 100%;
+  right: 5%;
+  margin: 0;
+  border: 1px solid #e6d7c6;
+  border-radius: 4px;
+  padding: 8px 12px;
+  background: #fff9f0;
+  color: #8a3325;
+  font-size: 10px;
+}
+
 .cart-trigger {
   display: flex;
   align-items: center;
@@ -126,6 +166,15 @@
     gap: 17px;
   }
 
+  .navbar-account {
+    gap: 7px;
+    font-size: 9px;
+  }
+
+  .account-name {
+    max-width: 75px;
+  }
+
   .navbar-links a {
     font-size: 10px;
   }
@@ -149,6 +198,18 @@
 
   .navbar-links {
     gap: 13px;
+  }
+
+  .navbar-links a:nth-child(n + 3) {
+    display: none;
+  }
+
+  .navbar-account {
+    gap: 5px;
+  }
+
+  .account-name {
+    max-width: 52px;
   }
 
   .navbar-links a:last-child {

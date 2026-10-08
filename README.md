@@ -27,6 +27,7 @@ src/
 │   └── Navbar.jsx          # Navigation component with links and cart button
 ├── context/
 │   └── CartContext.jsx     # Shared cart state
+│   └── AuthContext.jsx     # Supabase sign-in state
 ├── data/
 │   └── products.js         # Sample product list
 ├── pages/
@@ -34,6 +35,8 @@ src/
 │   ├── Shop.jsx            # Product listing with filters and search
 │   ├── ProductDetails.jsx  # Individual product page
 │   └── Cart.jsx            # Shopping cart
+│   ├── Auth.jsx            # Login, registration, and password reset
+│   └── ReturnPolicy.jsx    # Return policy and sample request form
 ├── App.jsx                 # Main app with routes
 ├── App.css                 # App styles
 └── index.css               # Global styles
@@ -46,10 +49,14 @@ src/
 ✓ **Search Functionality** — Find products by name, maker, or category
 ✓ **Product Details** — View full product information and ratings
 ✓ **Shopping Cart** — Add items, change quantities, and view cart totals across pages
+✓ **Authentication** — Supabase login, registration, remember-me, and password reset
+✓ **Return Policy** — Policy information and an in-browser sample return request with optional image proof
 ✓ **Beautiful UI** — Warm, artisan-inspired design with beige & brown palette
-✓ **No Backend Required** — Sample products and in-memory cart for demo purposes
+✓ **Simple Demo Scope** — Checkout and return requests are not persisted
 
-The cart is shared across routes while the app is open. It resets when the page is refreshed. Checkout is a demo button only.
+The cart is shared across routes while the app is open. It resets when the page is refreshed. Checkout and return requests are demo-only; request status and proof-image selection are not saved to a database.
+
+For production password-reset links, add your deployed site origin and `http://localhost:5173` to the Supabase Auth redirect URL allow list.
 
 ## Color Palette
 
