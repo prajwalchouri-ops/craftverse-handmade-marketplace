@@ -191,13 +191,9 @@ function Cart() {
               <span>Payment: Pay on delivery</span>
               <span>Status: Processing</span>
             </div>
-            <button
-              type="button"
-              className="button button-dark checkout-button"
-              onClick={() => setConfirmedOrder(null)}
-            >
+            <Link className="button button-dark checkout-button" to="/shop">
               Continue shopping <span>↗</span>
-            </button>
+            </Link>
           </section>
         </div>
       )}

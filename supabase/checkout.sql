@@ -259,6 +259,8 @@ revoke all on function public.add_item_to_cart(bigint) from public;
 revoke all on function public.set_cart_quantity(bigint, integer) from public;
 revoke all on function public.merge_guest_cart(jsonb) from public;
 revoke all on function public.place_order(text, text, text) from public;
+drop policy if exists "Customers can create their own orders" on public.orders;
+drop policy if exists "Customers can add items to their orders" on public.order_items;
 grant execute on function public.add_item_to_cart(bigint) to authenticated;
 grant execute on function public.set_cart_quantity(bigint, integer) to authenticated;
 grant execute on function public.merge_guest_cart(jsonb) to authenticated;
