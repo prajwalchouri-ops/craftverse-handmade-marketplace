@@ -1,0 +1,38 @@
+.cart-notice {
+  position: fixed;
+  z-index: 1000;
+  top: 90px;
+  right: 24px;
+  display: flex;
+  max-width: min(420px, calc(100vw - 32px));
+  align-items: center;
+  gap: 18px;
+  padding: 15px 18px;
+  border: 1px solid #d8c3ae;
+  border-radius: 8px;
+  background: #fffcf7;
+  box-shadow: 0 12px 32px rgb(47 33 26 / 14%);
+  color: #39271d;
+  font-size: 13px;
+}
+
+.cart-notice-error {
+  border-color: #b86a52;
+}
+
+.cart-notice button {
+  flex: 0 0 auto;
+  border: 0;
+  background: transparent;
+  color: #5a3825;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+@media (max-width: 520px) {
+  .cart-notice {
+    top: 74px;
+    right: 12px;
+  }
+}

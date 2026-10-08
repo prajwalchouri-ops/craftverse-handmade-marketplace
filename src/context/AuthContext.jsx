@@ -5,10 +5,12 @@ const AuthContext = createContext(null)
 
 export function AuthProvider({ children }) {
   const [session, setSession] = useState(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, nextSession) => {
       setSession(nextSession)
+      setIsLoading(false)
     })
 
     return () => subscription.unsubscribe()
@@ -22,8 +24,9 @@ export function AuthProvider({ children }) {
   const value = useMemo(() => ({
     session,
     user: session?.user ?? null,
+    isLoading,
     signOut
-  }), [session])
+  }), [session, isLoading])
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

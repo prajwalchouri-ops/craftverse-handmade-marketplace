@@ -15,7 +15,8 @@ Then open `http://localhost:5173` in your browser.
 
 1. Copy `.env.example` to `.env.local` and set your Supabase Project URL and publishable key.
 2. Run [`supabase/schema.sql`](./supabase/schema.sql) in the Supabase SQL Editor to create the tables, row-level security policies, and sample products.
-3. Restart the Vite dev server after changing environment variables.
+3. Run [`supabase/checkout.sql`](./supabase/checkout.sql) to enable saved carts and secure order placement.
+4. Restart the Vite dev server after changing environment variables.
 
 The browser app only uses the publishable key. Never put a database password, Supabase secret key, or `service_role` key in frontend code or a `VITE_` variable. Keep `.env.local` out of version control.
 
@@ -48,13 +49,15 @@ src/
 ✓ **Product Filtering** — Filter by category (Pottery, Jewelry, Textiles, Woodcraft)
 ✓ **Search Functionality** — Find products by name, maker, or category
 ✓ **Product Details** — View full product information and ratings
-✓ **Shopping Cart** — Add items, change quantities, and view cart totals across pages
+✓ **Shopping Cart** — Guest bags persist on this device; signed-in bags are saved in Supabase
+✓ **Checkout** — Signed-in customers can place orders with delivery details; orders, item prices, and stock changes are saved atomically in Supabase
 ✓ **Authentication** — Supabase login, registration, remember-me, and password reset
 ✓ **Return Policy** — Policy information and an in-browser sample return request with optional image proof
 ✓ **Beautiful UI** — Warm, artisan-inspired design with beige & brown palette
-✓ **Simple Demo Scope** — Checkout and return requests are not persisted
+✓ **Payment** — Pay on delivery is recorded; the site does not collect online payments
+✓ **Returns** — Return request form is a demo and does not persist requests or upload proof images
 
-The cart is shared across routes while the app is open. It resets when the page is refreshed. Checkout and return requests are demo-only; request status and proof-image selection are not saved to a database.
+Apply the checkout SQL migration before using saved carts or checkout. Guest bags are stored only in the current browser and merge into the Supabase cart after sign-in. Checkout creates a real order record and reduces product stock; no online payment is taken. Return request tracking remains a demo.
 
 For production password-reset links, add your deployed site origin and `http://localhost:5173` to the Supabase Auth redirect URL allow list.
 

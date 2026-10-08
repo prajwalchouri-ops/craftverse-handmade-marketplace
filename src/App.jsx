@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import CartNotice from './components/CartNotice'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
 import ProductDetails from './pages/ProductDetails'
@@ -12,10 +13,11 @@ import './App.css'
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <AuthProvider>
+    <Router>
+      <AuthProvider>
+        <CartProvider>
           <Navbar />
+          <CartNotice />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
@@ -34,9 +36,9 @@ function App() {
             <Link className="footer-policy-link" to="/return-policy">Return &amp; Refund Policy</Link>
             <p>© 2026 CraftVerse</p>
           </footer>
-        </AuthProvider>
-      </Router>
-    </CartProvider>
+        </CartProvider>
+      </AuthProvider>
+    </Router>
   )
 }
 
