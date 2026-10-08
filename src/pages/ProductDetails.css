@@ -1,0 +1,115 @@
+.product-details {
+  padding: 60px 10.4%;
+  min-height: 80vh;
+}
+
+.details-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.detail-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-copy h1 {
+  margin: 15px 0;
+  color: #39271d;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.detail-price {
+  margin: 0 0 20px;
+  color: #5a3825;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0 30px;
+  color: #806f63;
+  font-size: 13px;
+}
+
+.detail-rating .stars {
+  color: #b98255;
+  font-size: 14px;
+}
+
+.detail-description {
+  color: #806f63;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+
+.detail-maker {
+  margin: 0 0 30px;
+  color: #806f63;
+  font-size: 12px;
+}
+
+.detail-maker strong {
+  color: #5a3825;
+  font-weight: 600;
+}
+
+.button-dark {
+  background: #5a3825;
+  color: #fff9f0;
+}
+
+.button-dark:hover {
+  background: #39271d;
+}
+
+@media (max-width: 760px) {
+  .product-details {
+    padding: 40px 6%;
+  }
+
+  .details-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .detail-copy h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 520px) {
+  .product-details {
+    padding: 30px 5%;
+  }
+
+  .details-container {
+    gap: 30px;
+  }
+
+  .detail-copy h1 {
+    font-size: 28px;
+  }
+
+  .detail-price {
+    font-size: 16px;
+  }
+}

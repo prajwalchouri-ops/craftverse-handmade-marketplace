@@ -1,0 +1,157 @@
+.navbar {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  background: rgba(255, 249, 240, 0.96);
+  border-bottom: 1px solid rgba(90, 56, 37, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.navbar-container {
+  display: flex;
+  height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 7.3%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #5a3825;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border: 1px solid #b98255;
+  border-radius: 50%;
+  color: #5a3825;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1;
+}
+
+.brand-period {
+  color: #b98255;
+}
+
+.navbar-links {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  gap: clamp(20px, 3.1vw, 46px);
+}
+
+.navbar-links a {
+  position: relative;
+  display: grid;
+  height: 100%;
+  align-items: center;
+  color: #756356;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+  color: #5a3825;
+}
+
+.cart-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0 8px 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  color: #5a3825;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.cart-trigger svg {
+  width: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.3;
+}
+
+.cart-count {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: #5a3825;
+  color: white;
+  font-size: 10px;
+}
+
+.cart-trigger:hover {
+  color: #8b5e3c;
+}
+
+@media (max-width: 760px) {
+  .navbar-container {
+    padding: 0 5%;
+  }
+
+  .navbar-brand {
+    font-size: 19px;
+  }
+
+  .brand-mark {
+    width: 26px;
+    height: 26px;
+    font-size: 19px;
+  }
+
+  .navbar-links {
+    gap: 17px;
+  }
+
+  .navbar-links a {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar-container {
+    padding: 0 4%;
+  }
+
+  .navbar-brand {
+    gap: 6px;
+    font-size: 17px;
+  }
+
+  .brand-mark {
+    width: 23px;
+    height: 23px;
+    font-size: 17px;
+  }
+
+  .navbar-links {
+    gap: 13px;
+  }
+
+  .navbar-links a:last-child {
+    display: none;
+  }
+}
